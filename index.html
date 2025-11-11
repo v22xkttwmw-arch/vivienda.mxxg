@@ -93,11 +93,41 @@
         </div>
     </section>
 
-    <section class="cta" id="contacto">
+    <section class="contact-section" id="contacto">
         <div class="container">
-            <h2>¿Listo para empezar tu nueva vida en España?</h2>
-            <p>Hablemos de tu proyecto. Ofrecemos una primera asesoría gratuita.</p>
-            <a href="#contacto" class="btn-light">Agendar Asesoría</a>
+            <h2>¿Listo para empezar?</h2>
+            <p class="section-subtitle">Envíanos un mensaje. Ofrecemos una primera asesoría gratuita.</p>
+
+            <form class.="contact-form" action="#" method="POST">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group form-full-width">
+                        <label for="service">Servicio de interés</label>
+                        <select id="service" name="service">
+                            <option value="">Selecciona un servicio...</option>
+                            <option value="estudiantes">Residencia de Estudiantes</option>
+                            <option value="renta">Pisos/Rentas</option>
+                            <option value="inversion">Inversión Inmobiliaria</option>
+                            <option value="migracion">Asesoría Migratoria</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group form-full-width">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" rows="5"></textarea>
+                    </div>
+                </div>
+                <div class="form-submit">
+                    <button type="submit" class="btn-primary">Enviar Mensaje</button>
+                </div>
+            </form>
         </div>
     </section>
 
