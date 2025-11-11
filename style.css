@@ -81,19 +81,26 @@ h2 {
 .btn-primary {
     background-color: #0D9488;
     color: #ffffff !important;
-    padding: 10px 18px;
+    padding: 12px 25px; /* Un poco más grande para el formulario */
     border-radius: 6px;
     transition: background-color 0.3s ease;
     text-decoration: none; /* Asegura que no esté subrayado si es un <a> */
     border: none; /* Para los botones de formulario */
     cursor: pointer; /* Cursor de mano */
-    font-size: 1em; /* Asegura que tenga el mismo tamaño */
-    font-weight: 500; /* Coincide con la navegación */
+    font-size: 1.1em; /* Un poco más grande */
+    font-weight: 600; /* Más grueso */
 }
 
 .btn-primary:hover {
     background-color: #0A7D70;
     color: #ffffff !important;
+}
+
+/* Botón del header */
+.main-nav .btn-primary {
+    font-size: 1em; /* Restaura el tamaño original */
+    font-weight: 500;
+    padding: 10px 18px;
 }
 
 .btn-secondary {
@@ -113,23 +120,7 @@ h2 {
     color: #ffffff;
 }
 
-.btn-light {
-    background-color: #ffffff; /* Botón blanco */
-    color: #0D9488; /* Texto verde */
-    padding: 12px 25px; /* Un poco más grande */
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    white-space: nowrap;
-    display: inline-block;
-}
-
-.btn-light:hover {
-    background-color: #f0f0f0; /* Un gris muy claro al pasar el mouse */
-    color: #0A7D70;
-}
+/* Eliminamos el btn-light, ya no se usa */
 
 /* --- Sección Hero (Banner Principal) --- */
 .hero {
@@ -187,7 +178,7 @@ h2 {
     white-space: nowrap;
 }
 
-/* --- Sección Alianzas (CAMBIOS AQUÍ) --- */
+/* --- Sección Alianzas --- */
 .alliances {
     background-color: #ffffff; /* Fondo blanco */
     padding: 50px 0;
@@ -213,24 +204,21 @@ h2 {
 
 .logo-item {
     padding: 10px 20px;
-    /* centramos el contenido por si acaso */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Regla para los logos de texto */
 .logo-item.logo-text {
     font-size: 1.5em;
     color: #888;
     font-weight: bold;
 }
 
-/* Regla para las imágenes de logo */
 .logo-item img {
-    max-height: 45px; /* Altura máxima para normalizar */
-    width: auto; /* Mantiene la proporción */
-    max-width: 150px; /* Evita que sean demasiado anchos */
+    max-height: 45px;
+    width: auto;
+    max-width: 150px;
 }
 
 /* --- Sección Servicios --- */
@@ -273,23 +261,58 @@ h2 {
     margin-bottom: 25px;
 }
 
-/* --- Sección CTA (Llamada a la Acción) --- */
-.cta {
-    background-color: #0D9488;
-    padding: 60px 0;
+/* --- NUEVO: Sección Contacto --- */
+.contact-section {
+    padding: 70px 0;
+    background-color: #E6F3F2; /* Fondo menta pálido */
+}
+
+.contact-form {
+    max-width: 700px; /* Ancho del formulario */
+    margin: 0 auto; /* Centrado */
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columnas */
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Clase para que un campo ocupe el ancho completo */
+.form-full-width {
+    grid-column: 1 / -1; /* Ocupa desde la línea 1 hasta el final */
+}
+
+.form-group label {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    font-family: inherit; /* Usa la misma fuente del body */
+    box-sizing: border-box; /* Importante para que el padding no rompa el ancho */
+}
+
+.form-submit {
     text-align: center;
-}
-
-.cta h2 {
-    color: #ffffff;
-    font-size: 2.2em;
-    margin-bottom: 15px;
-}
-
-.cta p {
-    color: #E6F3F2;
-    font-size: 1.15em;
-    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 /* --- Footer (Pie de Página) --- */
@@ -415,6 +438,15 @@ h2 {
     .service-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+
+    /* Contacto en móvil */
+    .form-grid {
+        grid-template-columns: 1fr; /* 1 columna en móvil */
+    }
+
+    .contact-form {
+        padding: 20px; /* Menos padding en móvil */
     }
 
     .footer-grid {
