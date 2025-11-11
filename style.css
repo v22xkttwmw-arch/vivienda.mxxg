@@ -127,29 +127,40 @@ h2 {
     color: #0A7D70;
 }
 
-/* --- Sección Hero (Banner Principal) --- */
+/* --- CAMBIOS: Sección Hero (Banner Principal) --- */
 .hero {
-    background-color: #E6F3F2; /* Fondo de color verde menta muy pálido */
-    padding: 80px 0; /* Espaciado interno amplio */
+    /* Añadimos la imagen y un velo oscuro */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('hero-background.jpg');
+    background-size: cover; /* Cubre toda la sección */
+    background-position: center center; /* Centra la imagen */
+    background-repeat: no-repeat;
+
+    padding: 80px 0;
     text-align: center;
+
+    /* Aseguramos que el contenido esté por encima del velo */
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content {
-    max-width: 700px; /* Limita el ancho del texto para que sea legible */
-    margin: 0 auto; /* Centra el bloque de contenido */
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2; /* Contenido por encima de todo */
 }
 
 .hero h1 {
-    font-size: 2.8em; /* Tamaño de fuente grande para el título */
-    color: #0D9488; /* Color verde principal */
+    font-size: 2.8em;
+    color: #ffffff; /* Texto blanco para que contraste */
     margin-bottom: 15px;
 }
 
 .hero .subtitle {
     font-size: 1.25em;
-    color: #333;
+    color: #f0f0f0; /* Texto blanco-grisáceo */
     margin-bottom: 30px;
-    line-height: 1.6; /* Espaciado entre líneas */
+    line-height: 1.6;
 }
 
 .search-form {
@@ -339,36 +350,31 @@ h2 {
 }
 
 /* --- Responsive (Móvil) --- */
-/* Este código solo se aplica si la pantalla mide 768px o menos */
-
 @media (max-width: 768px) {
 
-    /* --- NUEVO: Arreglo de Header/Nav --- */
     .main-header .container {
-        flex-direction: column; /* Apila logo y nav */
-        gap: 15px; /* Espacio entre logo y nav */
+        flex-direction: column;
+        gap: 15px;
     }
 
     .main-nav ul {
-        flex-direction: column; /* Apila los enlaces del menú */
-        gap: 15px; /* Espacio entre enlaces */
+        flex-direction: column;
+        gap: 15px;
         width: 100%;
     }
 
     .main-nav li {
-        margin-left: 0; /* Quita el margen izquierdo de desktop */
+        margin-left: 0;
         width: 100%;
-        text-align: center; /* Centra el texto de los enlaces */
+        text-align: center;
     }
 
-    /* Hacemos que el botón de contacto ocupe más ancho */
     .main-nav .btn-primary {
         display: block; 
         width: auto; 
-        margin: 0 20%; /* Le da márgenes a los lados */
+        margin: 0 20%;
     }
 
-    /* Ajustamos los tamaños de texto del Hero */
     .hero h1 {
         font-size: 2.2em;
     }
@@ -377,40 +383,36 @@ h2 {
         font-size: 1.1em;
     }
 
-    /* Hacemos que la barra de búsqueda se rompa en dos líneas */
     .search-form {
-        flex-direction: column; /* Apila los elementos */
-        gap: 10px; /* Añade espacio entre el campo y el botón */
+        flex-direction: column;
+        gap: 10px;
     }
 
     .search-form input[type="text"] {
-        border-radius: 6px; /* Redondea todas las esquinas */
+        border-radius: 6px;
         border-right: 1px solid #ccc;
     }
 
     .search-form button {
-        border-radius: 6px; /* Redondea todas las esquinas */
+        border-radius: 6px;
     }
 
-    /* Hacemos que las tarjetas de servicio se pongan en 1 columna */
     .service-grid {
-        grid-template-columns: 1fr; /* 1 columna */
+        grid-template-columns: 1fr;
         gap: 20px;
     }
 
-    /* --- ARREGLO: Footer --- */
     .footer-grid {
-        grid-template-columns: 1fr; /* 1 columna */
+        grid-template-columns: 1fr;
         gap: 30px;
     }
 
-    /* Centramos el contenido de CADA columna del footer */
     .footer-col {
         text-align: center;
     }
 
     .footer-col .logo {
-        margin: 0 auto 15px auto; /* Centra el logo */
+        margin: 0 auto 15px auto;
     }
 
     .social-links {
