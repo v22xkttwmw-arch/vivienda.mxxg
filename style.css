@@ -1,4 +1,8 @@
 /* --- Estilos Generales --- */
+html {
+    scroll-behavior: smooth; /* ¡ESTA ES LA LÍNEA NUEVA! */
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: #f8f9fa; /* Un fondo gris muy sutil */
@@ -127,7 +131,7 @@ h2 {
     color: #0A7D70;
 }
 
-/* --- CAMBIOS: Sección Hero (Banner Principal) --- */
+/* --- Sección Hero (Banner Principal) --- */
 .hero {
     /* Añadimos la imagen y un velo oscuro */
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('hero-background.jpg');
