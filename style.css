@@ -7,18 +7,6 @@ body {
     padding: 0;
 }
 
-/* --- Estilos del Contenido de Prueba --- */
-h1 {
-    color: #0D9488; /* El color verde (teal) principal */
-    text-align: center;
-    margin-top: 40px;
-}
-
-p {
-    text-align: center;
-    font-size: 1.1em;
-    color: #555; /* Un gris un poco más claro para los párrafos */
-}
 /* --- Contenedor General --- */
 .container {
     width: 90%;
