@@ -19,3 +19,69 @@ p {
     font-size: 1.1em;
     color: #555; /* Un gris un poco más claro para los párrafos */
 }
+/* --- Contenedor General --- */
+.container {
+    width: 90%;
+    max-width: 1200px; /* Ancho máximo para pantallas grandes */
+    margin: 0 auto; /* Centra el contenido */
+}
+
+/* --- Header (Barra de Navegación) --- */
+.main-header {
+    background-color: #ffffff; /* Fondo blanco para el header */
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0; /* Una línea divisoria sutil */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Contenido dentro del header (logo y nav) */
+.main-header .container {
+    display: flex; /* Pone el logo y la nav en la misma línea */
+    justify-content: space-between; /* Los separa (uno a cada extremo) */
+    align-items: center; /* Los centra verticalmente */
+}
+
+.logo {
+    text-decoration: none;
+    color: #0D9488; /* Color verde (teal) */
+    font-size: 1.5em; /* Tamaño de fuente grande */
+    font-weight: 700; /* Negrita */
+}
+
+.main-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; /* Quita los puntos de la lista */
+    display: flex; /* Pone los enlaces en línea */
+    align-items: center; /* Centra verticalmente */
+}
+
+.main-nav li {
+    margin-left: 25px; /* Separación entre enlaces */
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 1em;
+    transition: color 0.3s ease; /* Efecto suave al pasar el mouse */
+}
+
+.main-nav a:hover {
+    color: #0D9488; /* Color verde al pasar el mouse */
+}
+
+/* Estilo del botón "Contacto" */
+.btn-primary {
+    background-color: #0D9488;
+    color: #ffffff !important; /* !important para asegurar que sea blanco */
+    padding: 10px 18px;
+    border-radius: 6px; /* Bordes redondeados */
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0A7D70; /* Un verde un poco más oscuro al pasar el mouse */
+    color: #ffffff !important;
+}
