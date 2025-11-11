@@ -1,0 +1,21 @@
+/* --- Estilos Generales --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f8f9fa; /* Un fondo gris muy sutil */
+    color: #333; /* Color de texto principal (casi negro) */
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Estilos del Contenido de Prueba --- */
+h1 {
+    color: #0D9488; /* El color verde (teal) principal */
+    text-align: center;
+    margin-top: 40px;
+}
+
+p {
+    text-align: center;
+    font-size: 1.1em;
+    color: #555; /* Un gris un poco más claro para los párrafos */
+}
