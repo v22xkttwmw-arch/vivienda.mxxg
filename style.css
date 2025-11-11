@@ -1,6 +1,6 @@
 /* --- Estilos Generales --- */
 html {
-    scroll-behavior: smooth; /* ¡ESTA ES LA LÍNEA NUEVA! */
+    scroll-behavior: smooth; /* Desplazamiento suave */
 }
 
 body {
@@ -133,16 +133,12 @@ h2 {
 
 /* --- Sección Hero (Banner Principal) --- */
 .hero {
-    /* Añadimos la imagen y un velo oscuro */
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('hero-background.jpg');
-    background-size: cover; /* Cubre toda la sección */
-    background-position: center center; /* Centra la imagen */
+    background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
-
     padding: 80px 0;
     text-align: center;
-
-    /* Aseguramos que el contenido esté por encima del velo */
     position: relative;
     z-index: 1;
 }
@@ -151,18 +147,18 @@ h2 {
     max-width: 700px;
     margin: 0 auto;
     position: relative;
-    z-index: 2; /* Contenido por encima de todo */
+    z-index: 2;
 }
 
 .hero h1 {
     font-size: 2.8em;
-    color: #ffffff; /* Texto blanco para que contraste */
+    color: #ffffff;
     margin-bottom: 15px;
 }
 
 .hero .subtitle {
     font-size: 1.25em;
-    color: #f0f0f0; /* Texto blanco-grisáceo */
+    color: #f0f0f0;
     margin-bottom: 30px;
     line-height: 1.6;
 }
@@ -191,7 +187,7 @@ h2 {
     white-space: nowrap;
 }
 
-/* --- Sección Alianzas --- */
+/* --- Sección Alianzas (CAMBIOS AQUÍ) --- */
 .alliances {
     background-color: #ffffff; /* Fondo blanco */
     padding: 50px 0;
@@ -203,48 +199,63 @@ h2 {
     color: #555;
     font-weight: 600;
     font-size: 1.2em;
-    text-transform: uppercase; /* MAYÚSCULAS */
-    letter-spacing: 0.5px; /* Espaciado entre letras */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     margin-bottom: 30px;
 }
 
 .logos-container {
     display: flex;
-    justify-content: space-around; /* Distribuye los logos equitativamente */
+    justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap; /* Permite que se acomoden en pantallas pequeñas */
+    flex-wrap: wrap;
 }
 
 .logo-item {
-    font-size: 1.5em;
-    color: #888; /* Color gris para los logos */
-    font-weight: bold;
     padding: 10px 20px;
+    /* centramos el contenido por si acaso */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Regla para los logos de texto */
+.logo-item.logo-text {
+    font-size: 1.5em;
+    color: #888;
+    font-weight: bold;
+}
+
+/* Regla para las imágenes de logo */
+.logo-item img {
+    max-height: 45px; /* Altura máxima para normalizar */
+    width: auto; /* Mantiene la proporción */
+    max-width: 150px; /* Evita que sean demasiado anchos */
 }
 
 /* --- Sección Servicios --- */
 .services {
-    padding: 70px 0; /* Espaciado amplio */
-    background-color: #f8f9fa; /* Fondo gris pálido (el del body) */
+    padding: 70px 0;
+    background-color: #f8f9fa;
 }
 
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
-    gap: 30px; /* Separación entre tarjetas */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
 }
 
 .service-card {
-    background-color: #ffffff; /* Fondo blanco para las tarjetas */
-    border: 1px solid #e0e0e0; /* Borde sutil */
-    border-radius: 8px; /* Bordes redondeados */
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
     padding: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombra ligera */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-5px); /* Efecto de levantar al mouse */
+    transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
 }
 
@@ -264,26 +275,26 @@ h2 {
 
 /* --- Sección CTA (Llamada a la Acción) --- */
 .cta {
-    background-color: #0D9488; /* Fondo de color verde principal */
+    background-color: #0D9488;
     padding: 60px 0;
     text-align: center;
 }
 
 .cta h2 {
-    color: #ffffff; /* Texto blanco */
+    color: #ffffff;
     font-size: 2.2em;
     margin-bottom: 15px;
 }
 
 .cta p {
-    color: #E6F3F2; /* Texto menta pálido */
+    color: #E6F3F2;
     font-size: 1.15em;
     margin-bottom: 30px;
 }
 
 /* --- Footer (Pie de Página) --- */
 .main-footer {
-    background-color: #ffffff; /* Fondo blanco */
+    background-color: #ffffff;
     padding: 60px 0 30px 0;
     border-top: 1px solid #e0e0e0;
     color: #555;
@@ -291,7 +302,7 @@ h2 {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    grid-template-columns: repeat(4, 1fr);
     gap: 40px;
     margin-bottom: 40px;
 }
