@@ -21,15 +21,16 @@ h2 { font-size: 2.2em; text-align: center; margin-bottom: 10px; }
 .btn-primary:hover { background-color: #0A7D70; }
 
 .btn-secondary {
-    background-color: #E6F3F2;
+    background-color: #fff;
     color: #0D9488;
-    padding: 10px 18px;
+    padding: 10px 20px;
     border-radius: 6px;
     text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 600;
+    transition: background 0.3s;
     white-space: nowrap;
     display: inline-block;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 .btn-secondary:hover { background-color: #0D9488; color: #ffffff; }
 
@@ -47,86 +48,99 @@ h2 { font-size: 2.2em; text-align: center; margin-bottom: 10px; }
 .hero {
     background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('hero-background.jpg');
     background-size: cover; background-position: center;
-    padding: 100px 0; text-align: center; color: #fff;
+    padding: 120px 0; text-align: center; color: #fff;
 }
-.hero h1 { color: #fff; font-size: 2.8em; margin-bottom: 20px; }
+.hero h1 { color: #fff; font-size: 3em; margin-bottom: 20px; }
 .hero .subtitle { font-size: 1.3em; margin-bottom: 30px; color: #f0f0f0; }
 
-/* --- SECCIÓN DIVIDIDA (Split Layout) --- */
-.split-section { padding: 80px 0; background-color: #fff; }
-.split-layout-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;
+/* --- NUEVA SECCIÓN: Tira de Logos (Alliances Strip) --- */
+.logos-strip {
+    background-color: #ffffff;
+    padding: 30px 0;
+    border-bottom: 1px solid #eee;
 }
-.split-col-left h3, .split-col-right h3 { text-align: left; font-size: 1.8em; margin-bottom: 15px; color: #0D9488; }
-.split-desc { color: #666; margin-bottom: 30px; font-size: 1.1em; text-align: left; }
-
-/* Estilos Columna Izquierda (Alianzas) */
-.alliances-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.alliance-card {
-    background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 8px;
-    height: 100px; display: flex; align-items: center; justify-content: center; padding: 15px;
+.strip-label {
+    text-align: center; font-size: 0.9em; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;
 }
-.alliance-card img { max-width: 100%; max-height: 50px; }
-.alliance-card.text-logo { color: #555; font-weight: bold; text-align: center; }
+.logos-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px; /* Espacio entre logos */
+    flex-wrap: wrap;
+}
+.logos-row img {
+    height: 35px; /* Altura uniforme para todos */
+    filter: grayscale(100%); /* Logos en gris para elegancia */
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+.logos-row img:hover {
+    filter: grayscale(0%); /* Color al pasar el mouse */
+    opacity: 1;
+}
+.text-logo {
+    font-weight: bold; color: #888; font-size: 1.2em;
+    transition: color 0.3s;
+}
+.text-logo:hover { color: #0D9488; }
 
-/* --- NUEVO DISEÑO: Tarjetas de Servicios (Estilo Icono/Cuadrado) --- */
-.mini-services-grid {
+/* --- NUEVO DISEÑO CENTRAL: Servicios Integrales --- */
+.services-main {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+.main-services-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 tarjetas por fila */
-    gap: 25px; 
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas en una fila */
+    gap: 30px;
 }
 
-.mini-service-item {
-    background: #ffffff; /* Fondo BLANCO puro */
-    border: 1px solid #f0f0f0; /* Borde muy sutil */
-    border-radius: 16px; /* Bordes redondeados suaves */
-    
+.service-card-item {
+    background: #ffffff;
+    border: 1px solid #f0f0f0;
+    border-radius: 16px;
     width: 100%;
-    aspect-ratio: 1 / 1; /* OBLIGA a ser CUADRADO */
-    
+    aspect-ratio: 1 / 1; /* Cuadrado perfecto */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
     text-decoration: none;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03); /* Sombra suave */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 15px;
+    padding: 20px;
     box-sizing: border-box;
 }
 
-.mini-service-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    border-color: #0D9488; /* Borde verde al pasar el mouse */
+.service-card-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    border-color: #0D9488;
 }
 
-/* Contenedor del icono/imagen */
 .icon-container {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 15px;
-    
-    /* Círculo de fondo suave (Color Menta de tu marca) */
-    background-color: #ffffff; /* Círculo blanco */ 
+    margin-bottom: 20px;
+    background-color: #ffffff; /* Fondo blanco del circulo */
     border-radius: 50%;
+    /* Sombra suave solo al círculo para que resalte sobre el blanco */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
 }
 
-/* Estilo de TU imagen dentro del círculo */
 .icon-container img {
-    width: 45px; 
-    height: 45px;
+    width: 55px;
+    height: 55px;
     object-fit: contain;
 }
 
-/* Texto de la tarjeta */
-.mini-service-item h4 {
+.service-card-item h4 {
     color: #333;
-    font-size: 1em;
+    font-size: 1.1em;
     font-weight: 700;
     text-align: center;
     margin: 0;
@@ -134,7 +148,7 @@ h2 { font-size: 2.2em; text-align: center; margin-bottom: 10px; }
 }
 
 /* --- Contacto --- */
-.contact-section { padding: 70px 0; background-color: #f0f4f4; }
+.contact-section { padding: 70px 0; background-color: #E6F3F2; }
 .contact-form {
     background: #fff; padding: 40px; border-radius: 8px;
     max-width: 700px; margin: 0 auto; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
@@ -147,38 +161,21 @@ input, select, textarea {
 }
 .form-submit { text-align: center; margin-top: 20px; }
 
-/* --- Estilos Páginas Internas --- */
+/* --- Páginas Internas --- */
 .service-hero { background: #E6F3F2; padding: 60px 0; text-align: center; }
 .service-hero h1 { color: #0D9488; font-size: 2.5em; margin-bottom: 15px; }
 .service-hero .subtitle { font-size: 1.2em; color: #333; max-width: 700px; margin: 0 auto; }
 .service-content { padding: 60px 0; background: #fff; }
 .content-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 50px; }
 .content-text { font-size: 1.1em; line-height: 1.7; }
-.content-text h3 { color: #0D9488; font-size: 1.5em; margin-top: 30px; margin-bottom: 15px; }
-.content-text ul { list-style-type: none; padding-left: 20px; }
-.content-text li { position: relative; padding-left: 25px; margin-bottom: 10px; }
-.content-text li::before { content: '✓'; position: absolute; left: 0; color: #0D9488; font-weight: bold; }
 .sidebar-box { background: #f8f9fa; padding: 30px; border-radius: 8px; border: 1px solid #e0e0e0; position: sticky; top: 20px; }
 .sidebar-box h4 { margin-top: 0; font-size: 1.3em; color: #0D9488; }
 .sidebar-box .form-group { margin-bottom: 15px; }
 .sidebar-box .btn-primary { width: 100%; }
 
-/* --- Footer (CORREGIDO) --- */
-.main-footer {
-    background-color: #ffffff;
-    padding: 60px 0 30px 0;
-    border-top: 1px solid #e0e0e0;
-    color: #555;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
-    gap: 40px;
-    margin-bottom: 40px;
-    text-align: left;
-}
-
+/* --- Footer --- */
+.main-footer { background: #fff; padding: 60px 0 30px; border-top: 1px solid #eee; }
+.footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-bottom: 40px; text-align: left; }
 .footer-col h4 { font-size: 1.1em; color: #333; margin-bottom: 20px; font-weight: 600; }
 .footer-col ul { list-style: none; padding: 0; margin: 0; }
 .footer-col li { margin-bottom: 10px; }
@@ -186,15 +183,16 @@ input, select, textarea {
 .footer-col a:hover { color: #0D9488; }
 .footer-bottom { text-align: center; border-top: 1px solid #e0e0e0; padding-top: 30px; font-size: 0.9em; }
 
-/* --- Responsive (Móvil) --- */
+/* --- Responsive --- */
 @media (max-width: 768px) {
     .main-header .container, .main-nav ul { flex-direction: column; gap: 15px; }
     .main-nav .btn-primary { width: 100%; text-align: center; box-sizing: border-box; }
     
-    /* Split Section */
-    .split-layout-grid { grid-template-columns: 1fr; gap: 50px; }
+    /* Servicios: 1 col en móvil */
+    .main-services-grid { grid-template-columns: 1fr; gap: 20px; }
+    .logos-row { gap: 30px; } /* Logos más juntos */
     
-    /* Footer y Formularios */
+    /* Footer y Formularios en Móvil */
     .footer-grid, .form-grid, .content-layout { grid-template-columns: 1fr; }
     .footer-col { text-align: center; }
     .hero h1 { font-size: 2em; }
