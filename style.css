@@ -53,46 +53,46 @@ h2 { font-size: 2.2em; text-align: center; margin-bottom: 10px; }
 .hero h1 { color: #fff; font-size: 3em; margin-bottom: 20px; }
 .hero .subtitle { font-size: 1.3em; margin-bottom: 30px; color: #f0f0f0; }
 
-/* --- NUEVA SECCIÓN: Tira de Logos (Alliances Strip) --- */
+/* --- Tira de Logos (MÁS GRANDE) --- */
 .logos-strip {
     background-color: #ffffff;
-    padding: 30px 0;
+    padding: 60px 0; /* Aumentado de 30 a 60 para más presencia */
     border-bottom: 1px solid #eee;
 }
 .strip-label {
-    text-align: center; font-size: 0.9em; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;
+    text-align: center; font-size: 1em; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 30px; font-weight: 600;
 }
 .logos-row {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 60px; /* Espacio entre logos */
+    gap: 70px; /* Más espacio entre logos */
     flex-wrap: wrap;
 }
 .logos-row img {
-    height: 35px; /* Altura uniforme para todos */
-    filter: grayscale(100%); /* Logos en gris para elegancia */
+    height: 50px; /* Aumentado de 35 a 50px */
+    filter: grayscale(100%);
     opacity: 0.6;
     transition: all 0.3s ease;
 }
 .logos-row img:hover {
-    filter: grayscale(0%); /* Color al pasar el mouse */
+    filter: grayscale(0%);
     opacity: 1;
 }
 .text-logo {
-    font-weight: bold; color: #888; font-size: 1.2em;
+    font-weight: bold; color: #888; font-size: 1.4em; /* Aumentado el texto */
     transition: color 0.3s;
 }
 .text-logo:hover { color: #0D9488; }
 
-/* --- NUEVO DISEÑO CENTRAL: Servicios Integrales --- */
+/* --- Servicios Integrales (CON INFO EXTRA) --- */
 .services-main {
     padding: 80px 0;
     background-color: #f8f9fa;
 }
 .main-services-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas en una fila */
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
 
@@ -100,17 +100,18 @@ h2 { font-size: 2.2em; text-align: center; margin-bottom: 10px; }
     background: #ffffff;
     border: 1px solid #f0f0f0;
     border-radius: 16px;
-    width: 100%;
-    aspect-ratio: 1 / 1; /* Cuadrado perfecto */
+    /* Quitamos aspect-ratio fijo para permitir que el texto crezca hacia abajo */
+    min-height: 320px; 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Alineación arriba */
     text-decoration: none;
     box-shadow: 0 4px 15px rgba(0,0,0,0.03);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 20px;
+    padding: 30px 20px;
     box-sizing: border-box;
+    text-align: center;
 }
 
 .service-card-item:hover {
@@ -120,31 +121,45 @@ h2 { font-size: 2.2em; text-align: center; margin-bottom: 10px; }
 }
 
 .icon-container {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
-    background-color: #ffffff; /* Fondo blanco del circulo */
+    background-color: #ffffff;
     border-radius: 50%;
-    /* Sombra suave solo al círculo para que resalte sobre el blanco */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .icon-container img {
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
     object-fit: contain;
 }
 
 .service-card-item h4 {
     color: #333;
-    font-size: 1.1em;
+    font-size: 1.2em;
     font-weight: 700;
-    text-align: center;
-    margin: 0;
-    line-height: 1.4;
+    margin: 0 0 10px 0;
+}
+
+/* Nuevos estilos para el texto descriptivo */
+.service-desc {
+    font-size: 0.95em;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Empuja el botón hacia abajo si sobra espacio */
+}
+
+.learn-more {
+    font-size: 0.9em;
+    color: #0D9488;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 /* --- Contacto --- */
@@ -161,7 +176,7 @@ input, select, textarea {
 }
 .form-submit { text-align: center; margin-top: 20px; }
 
-/* --- Páginas Internas --- */
+/* --- Estilos Páginas Internas --- */
 .service-hero { background: #E6F3F2; padding: 60px 0; text-align: center; }
 .service-hero h1 { color: #0D9488; font-size: 2.5em; margin-bottom: 15px; }
 .service-hero .subtitle { font-size: 1.2em; color: #333; max-width: 700px; margin: 0 auto; }
@@ -188,11 +203,9 @@ input, select, textarea {
     .main-header .container, .main-nav ul { flex-direction: column; gap: 15px; }
     .main-nav .btn-primary { width: 100%; text-align: center; box-sizing: border-box; }
     
-    /* Servicios: 1 col en móvil */
     .main-services-grid { grid-template-columns: 1fr; gap: 20px; }
-    .logos-row { gap: 30px; } /* Logos más juntos */
+    .logos-row { gap: 30px; }
     
-    /* Footer y Formularios en Móvil */
     .footer-grid, .form-grid, .content-layout { grid-template-columns: 1fr; }
     .footer-col { text-align: center; }
     .hero h1 { font-size: 2em; }
