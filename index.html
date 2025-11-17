@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Destino Europa - Tu Conexión con España</title>
-    <meta name="description" content="Tu puerta de entrada a España. Conectamos a mexicanos con residencias, pisos y asesoría.">
+    <meta name="description" content="Tu puerta de entrada a España. Conectamos a mexicanos con residencias de estudiantes, pisos en renta y asesoría migratoria. ¡Asesoría gratuita!">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.destinoeuro.com/">
+    <meta property="og:title" content="Destino Europa - Vivir e Invertir en España">
+    <meta property="og:description" content="Residencias de estudiantes, pisos en renta y asesoría legal para mexicanos.">
+    <meta property="og:image" content="https://v22xkttwmw-arch.github.io/vivienda.mxxg/hero-background.jpg">
+
     <link rel="icon" type="image/png" href="favicon.png">
+    
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -19,7 +28,7 @@
                     <li><a href="estudiantes.html">Estudiantes</a></li>
                     <li><a href="inversores.html">Inversores</a></li>
                     <li><a href="pisos.html">Pisos/Rentas</a></li>
-                    <li><a href="migracion.html">Asesoría Migratoria</a></li>
+                    <li><a href="migracion.html">Migración</a></li>
                     <li><a href="#contacto" class="btn-primary">Contacto</a></li>
                 </ul>
             </nav>
@@ -51,43 +60,35 @@
     <section class="services-main" id="servicios">
         <div class="container">
             <h2>Servicios Integrales</h2>
-            <p class="section-subtitle">Soluciones completas para cada perfil. Tu llegada a Europa, resuelta.</p>
+            <p class="section-subtitle">Todo lo que necesitas para tu llegada a Europa, en un solo lugar.</p>
 
-            <div class="main-services-grid">
-                <a href="estudiantes.html" class="service-card-item">
+            <div class="mini-services-grid">
+                <a href="estudiantes.html" class="mini-service-item">
                     <div class="icon-container">
                         <img src="bg-estudiantes.png" alt="Estudiantes">
                     </div>
                     <h4>Residencias y Universidades</h4>
-                    <p class="service-desc">Habitaciones verificadas cerca de tu campus. Trámite 100% online desde México.</p>
-                    <span class="learn-more">Ver opciones <i class="fa-solid fa-arrow-right"></i></span>
                 </a>
                 
-                <a href="inversores.html" class="service-card-item">
+                <a href="inversores.html" class="mini-service-item">
                     <div class="icon-container">
                         <img src="bg-inversores.png" alt="Inversores">
                     </div>
                     <h4>Pisos e Inversiones</h4>
-                    <p class="service-desc">Alta rentabilidad y gestión de Golden Visa. Oportunidades exclusivas en Madrid.</p>
-                    <span class="learn-more">Ver inversiones <i class="fa-solid fa-arrow-right"></i></span>
                 </a>
 
-                <a href="pisos.html" class="service-card-item">
+                <a href="pisos.html" class="mini-service-item">
                     <div class="icon-container">
                         <img src="bg-pisos.png" alt="Rentas">
                     </div>
                     <h4>Rentas Flexibles</h4>
-                    <p class="service-desc">Apartamentos amueblados de media y larga estancia. Sin aval bancario.</p>
-                    <span class="learn-more">Buscar pisos <i class="fa-solid fa-arrow-right"></i></span>
                 </a>
 
-                <a href="migracion.html" class="service-card-item">
+                <a href="migracion.html" class="mini-service-item">
                     <div class="icon-container">
                         <img src="bg-migracion.png" alt="Migración">
                     </div>
                     <h4>Asesoría Migratoria</h4>
-                    <p class="service-desc">Expertos en extranjería: Visados, NIE, TIE y Nacionalidad.</p>
-                    <span class="learn-more">Consultar <i class="fa-solid fa-arrow-right"></i></span>
                 </a>
             </div>
         </div>
@@ -152,8 +153,8 @@
                 <div class="footer-col">
                     <h4>Legal</h4>
                     <ul>
-                        <li><a href="politica-de-privacidad.html">Política de Privacidad</a></li>
-<li><a href="terminos.html">Términos y Condiciones</a></li>
+                        <li><a href="politica-de-privacidad.html">Privacidad</a></li>
+                        <li><a href="terminos.html">Términos</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -169,8 +170,31 @@
             </div>
         </div>
     </footer>
-<a href="https://wa.me/525525624262" target="_blank" class="whatsapp-float">
+
+    <a href="https://wa.me/525525624262" target="_blank" class="whatsapp-float">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
+
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-text">
+            <p>Utilizamos cookies para mejorar tu experiencia. Al navegar, aceptas nuestra <a href="politica-de-privacidad.html">política de privacidad</a>.</p>
+        </div>
+        <button id="accept-cookies" class="btn-cookie">Aceptar</button>
+    </div>
+
+    <script>
+        const cookieBanner = document.getElementById('cookie-banner');
+        const acceptBtn = document.getElementById('accept-cookies');
+
+        if (!localStorage.getItem('cookiesAccepted')) {
+            cookieBanner.classList.add('show');
+        }
+
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem('cookiesAccepted', 'true');
+            cookieBanner.classList.remove('show');
+        });
+    </script>
+
 </body>
 </html>
