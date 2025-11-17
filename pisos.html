@@ -3,27 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Renta de Pisos y Apartamentos en España - vivienda.mxxg</title>
+    <title>Renta de Pisos y Apartamentos en España - Destino Europa</title>
     <meta name="description" content="Encuentra pisos en renta en Madrid, Barcelona y toda España. Alquileres de media y larga estancia amueblados, ideales para expatriados mexicanos.">
-    
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <header class="main-header">
         <div class="container">
-            <a href="index.html" class="logo">
-                <strong>vivienda.mxxg</strong>
-            </a>
+            <a href="index.html" class="logo"><strong>Destino Europa</strong></a>
             <nav class="main-nav">
                 <ul>
                     <li><a href="estudiantes.html">Estudiantes</a></li>
                     <li><a href="inversores.html">Inversores</a></li>
                     <li><a href="pisos.html">Pisos/Rentas</a></li>
-                    <li><a href="index.html#servicios">Asesoría Migratoria</a></li>
-                    <li><a href="index.html#contacto" class="btn-primary">Contacto</a></li>
+                    <li><a href="migracion.html">Asesoría Migratoria</a></li>
+                    <li><a href="#contacto" class="btn-primary">Contacto</a></li>
                 </ul>
             </nav>
         </div>
@@ -70,25 +67,23 @@
                         <div class="sidebar-box">
                             <h4>Encuentra tu Piso</h4>
                             <p>Dinos qué buscas y te enviaremos opciones disponibles.</p>
-                            
-                            <form action="https://formspree.io/f/xjkjvpay" method="POST">
+                            <form class="contact-form" action="https://formspree.io/f/xjkjvpay" method="POST">
                                 <input type="hidden" name="source" value="Pagina Pisos">
-                                
                                 <div class="form-group">
-                                    <label for="name-pisos">Nombre</label>
-                                    <input type="text" id="name-pisos" name="name" required>
+                                    <label>Nombre</label>
+                                    <input type="text" name="name" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="email-pisos">Email</label>
-                                    <input type="email" id="email-pisos" name="email" required>
+                                    <label>Email</label>
+                                    <input type="email" name="email" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="phone-pisos">Teléfono</label>
-                                    <input type="tel" id="phone-pisos" name="phone">
+                                    <label>Teléfono</label>
+                                    <input type="tel" name="phone">
                                 </div>
                                 <div class="form-group">
-                                    <label for="city-pisos">Ciudad de interés</label>
-                                    <select id="city-pisos" name="city">
+                                    <label>Ciudad</label>
+                                    <select name="city">
                                         <option value="Madrid">Madrid</option>
                                         <option value="Barcelona">Barcelona</option>
                                         <option value="Valencia">Valencia</option>
@@ -102,7 +97,34 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <div class="container">
+                <h2>Así podría ser tu próximo hogar</h2>
+                <p class="section-subtitle">Ejemplos reales del estándar de calidad que manejamos.</p>
                 
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80" alt="Piso Luminoso">
+                        <div class="gallery-caption">
+                            <span>Madrid, Barrio Salamanca</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1505693416388-b034680c5006?auto=format&fit=crop&w=800&q=80" alt="Habitación Moderna">
+                        <div class="gallery-caption">
+                            <span>Barcelona, Eixample</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80" alt="Cocina Diseño">
+                        <div class="gallery-caption">
+                            <span>Valencia, Centro</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         
@@ -112,47 +134,42 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="index.html" class="logo">
-                        <strong>vivienda.mxxg</strong>
-                    </a>
-                    <p class="footer-about">Conectando a mexicanos con su futuro en España.</p>
+                    <a href="index.html" class="logo"><strong>Destino Europa</strong></a>
+                    <p class="footer-about">Tu puente entre México y España.</p>
                 </div>
-                
                 <div class="footer-col">
                     <h4>Navegación</h4>
                     <ul>
                         <li><a href="estudiantes.html">Estudiantes</a></li>
                         <li><a href="inversores.html">Inversores</a></li>
                         <li><a href="pisos.html">Pisos/Rentas</a></li>
-                        <li><a href="index.html#servicios">Asesoría Migratoria</a></li>
+                        <li><a href="migracion.html">Migración</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-col">
                     <h4>Legal</h4>
                     <ul>
-                        <li><a href="#">Política de Privacidad</a></li>
-                        <li><a href="#">Términos y Condiciones</a></li>
-                        <li><a href="#">Política de Cookies</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                        <li><a href="#">Términos</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-col">
                     <h4>Contacto</h4>
                     <ul>
-                        <li><a href="mailto:hola@vivienda.mxxg">hola@vivienda.mxxg</a></li>
+                        <li><a href="mailto:hola@destinoeuro.com">hola@destinoeuro.com</a></li>
                         <li><a href="https://wa.me/525525624262" target="_blank">WhatsApp</a></li>
                     </ul>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2025 vivienda.mxxg - Todos los derechos reservados.</p>
+                <p>&copy; 2025 Destino Europa.</p>
             </div>
         </div>
     </footer>
-<a href="https://wa.me/525525624262" target="_blank" class="whatsapp-float">
+    
+    <a href="https://wa.me/525525624262" target="_blank" class="whatsapp-float">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
+
 </body>
 </html>
