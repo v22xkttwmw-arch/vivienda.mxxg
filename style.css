@@ -321,17 +321,18 @@ input, select, textarea {
         height: 250px;
     }
 }
-/* --- IMÁGENES DE FONDO PARA PÁGINAS INTERNAS --- */
+/* --- IMÁGENES DE FONDO PARA PÁGINAS INTERNAS (HEROS) --- */
 
 /* Ajuste general para que el texto se lea bien sobre las fotos */
 .service-hero {
     background-size: cover;
     background-position: center;
-    padding: 120px 0; /* Un poco más alto para lucir la foto */
-    position: relative; /* Necesario para la capa oscura */
+    padding: 120px 0;
+    position: relative;
+    color: #ffffff !important; /* Texto blanco obligatorio */
 }
 
-/* Capa oscura automática para que el texto resalte */
+/* Capa oscura automática */
 .service-hero::before {
     content: '';
     position: absolute;
@@ -340,39 +341,38 @@ input, select, textarea {
     z-index: 0;
 }
 
-/* Aseguramos que el texto flote sobre la capa oscura */
 .service-hero .container {
     position: relative;
     z-index: 1;
 }
 
 .service-hero h1 { 
-    color: #ffffff !important; /* Forzamos color blanco */
+    color: #ffffff !important; 
     text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 .service-hero .subtitle { 
-    color: #f0f0f0 !important; /* Blanco suave */
+    color: #f0f0f0 !important; 
     font-weight: 500;
 }
 
-/* === LAS FOTOS (Enlaces directos que no fallan) === */
+/* === LAS FOTOS (Enlaces actualizados) === */
 
-/* 1. Foto para ESTUDIANTES (Ambiente Universitario) */
+/* 1. Foto para ESTUDIANTES (NUEVA IMAGEN: Grupo estudiantes/Campus) */
 .hero-estudiantes { 
-    background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80'); 
+    background-image: url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1600&q=80'); 
 }
 
-/* 2. Foto para INVERSORES (Edificio Moderno/Negocios) */
+/* 2. Foto para INVERSORES */
 .hero-inversores { 
     background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80'); 
 }
 
-/* 3. Foto para PISOS (Interior Acogedor) */
+/* 3. Foto para PISOS */
 .hero-pisos { 
     background-image: url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&q=80'); 
 }
 
-/* 4. Foto para MIGRACIÓN (Viaje/Aeropuerto) */
+/* 4. Foto para MIGRACIÓN */
 .hero-migracion { 
     background-image: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1600&q=80'); 
 }
