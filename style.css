@@ -73,49 +73,55 @@ h2 { font-size: 2.2em; text-align: center; margin-bottom: 10px; }
 
 /* --- SERVICIOS INTEGRALES (NUEVO GRID) --- */
 .services-main { padding: 80px 0; background-color: #f8f9fa; }
+/* --- NUEVO DISEÑO: Tarjetas de Servicios (Con Texto) --- */
 .mini-services-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 tarjetas en fila */
-    gap: 30px;
+    gap: 25px; 
 }
 
 .mini-service-item {
-    background: #ffffff; 
+    background: #ffffff; /* Fondo BLANCO */
     border: 1px solid #f0f0f0; 
     border-radius: 16px; 
-    width: 100%;
-    aspect-ratio: 1 / 1; /* Tarjeta cuadrada */
+    
+    /* CAMBIO: Quitamos aspect-ratio para que crezca con el texto */
+    min-height: 320px; 
+    
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Alineamos contenido arriba */
+    
     text-decoration: none;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 15px;
+    padding: 30px 20px; /* Un poco más de espacio interno */
     box-sizing: border-box;
+    text-align: center;
 }
 
 .mini-service-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    border-color: #0D9488;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    border-color: #0D9488; 
 }
 
 .icon-container {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
     background-color: #ffffff; 
     border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Sombra suave al círculo */
 }
 
 .icon-container img {
-    width: 60px; /* Imagen un poco más grande */
-    height: 60px;
+    width: 45px; 
+    height: 45px;
     object-fit: contain;
 }
 
@@ -123,9 +129,26 @@ h2 { font-size: 2.2em; text-align: center; margin-bottom: 10px; }
     color: #333;
     font-size: 1.1em;
     font-weight: 700;
-    text-align: center;
-    margin: 0;
+    margin: 0 0 10px 0; /* Espacio debajo del título */
     line-height: 1.4;
+}
+
+/* Estilo para la descripción nueva */
+.card-desc {
+    font-size: 0.95em;
+    color: #666;
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+    flex-grow: 1; /* Esto empuja el enlace "Ver más" hacia abajo */
+}
+
+/* Estilo para el enlace "Ver más" */
+.card-link {
+    font-size: 0.9em;
+    color: #0D9488;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 /* --- Contacto --- */
