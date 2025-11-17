@@ -1,145 +1,553 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* --- Estilos Generales --- */
+html {
+    scroll-behavior: smooth;
+}
 
-    <title>Residencias para Estudiantes Mexicanos en España - vivienda.mxxg</title>
-    <meta name="description" content="Encuentra las mejores residencias y pisos para estudiantes mexicanos en España. Te ayudamos con tu alojamiento en Madrid, Barcelona y más. ¡Asesoría gratuita!">
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
 
-    <link rel="icon" type="image/png" href="favicon.png">
+h2 {
+    font-size: 2.2em;
+    color: #0D9488; /* Verde principal */
+    text-align: center;
+    margin-bottom: 10px;
+}
 
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+.section-subtitle {
+    text-align: center;
+    font-size: 1.15em;
+    color: #555;
+    margin-bottom: 40px;
+}
 
-    <header class="main-header">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <strong>vivienda.mxxg</strong>
-            </a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="estudiantes.html">Estudiantes</a></li>
-                    <li><a href="index.html#servicios">Inversores</a></li>
-                    <li><a href="index.html#servicios">Pisos/Rentas</a></li>
-                    <li><a href="index.html#servicios">Asesoría Migratoria</a></li>
-                    <li><a href="index.html#contacto" class="btn-primary">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+/* --- Contenedor General --- */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-    <main>
+/* --- Header (Barra de Navegación) --- */
+.main-header {
+    background-color: #ffffff;
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
 
-        <section class="service-hero">
-            <div class="container">
-                <h1>Alojamiento para Estudiantes Mexicanos en España</h1>
-                <p class="subtitle">Nos asociamos con las mejores residencias y plataformas (como Livensa Living) para encontrar tu lugar ideal. Nos encargamos de todo.</p>
-            </div>
-        </section>
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        <section class="service-content">
-            <div class="container">
-                <h2>Tu Hogar Lejos de Casa</h2>
-                <p class="section-subtitle">Enfócate en tus estudios, nosotros en tu comodidad.</p>
+.logo {
+    text-decoration: none;
+    color: #0D9488;
+    font-size: 1.5em;
+    font-weight: 700;
+}
 
-                <div class="content-layout">
-                    <div class="content-text">
-                        <h3>¿Por qué reservar con nosotros?</h3>
-                        <p>Entendemos el proceso de mudarse de México a España. No eres solo un número; eres un estudiante al que queremos ayudar a tener una transición sencilla y segura.</p>
-                        <ul>
-                            <li><strong>Alianzas Verificadas:</strong> Solo trabajamos con residencias y propietarios de confianza.</li>
-                            <li><strong>Asesoría 1-a-1:</strong> Hablamos contigo para entender qué buscas: ¿cerca de la universidad? ¿en el centro? ¿con gimnasio?</li>
-                            <li><strong>Trámite Sencillo:</strong> Te guiamos en el proceso de papeleo, contrato y depósito, todo desde México.</li>
-                            <li><strong>Soporte en España:</strong> ¿Llegas y algo no está bien? Tienes un contacto local que te respalda.</li>
-                        </ul>
+.main-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
 
-                        <h3>Principales Ciudades</h3>
-                        <p>Tenemos cobertura en las ciudades universitarias más importantes de España:</p>
-                        <ul>
-                            <li>Madrid</li>
-                            <li>Barcelona</li>
-                            <li>Valencia</li>
-                            <li>Sevilla</li>
-                            <li>Granada</li>
-                            <li>Salamanca</li>
-                        </ul>
-                    </div>
+.main-nav li {
+    margin-left: 25px;
+}
 
-                    <div class="content-sidebar">
-                        <div class="sidebar-box">
-                            <h4>¿Interesado en una residencia?</h4>
-                            <p>Déjanos tus datos y un asesor de estudiantes te contactará.</p>
-                            <form action="https://formspree.io/f/xjkjvpay" method="POST">
-                                <input type="hidden" name="source" value="Pagina Estudiantes">
-                                <div class="form-group">
-                                    <label for="name-est">Nombre</label>
-                                    <input type="text" id="name-est" name="name" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email-est">Email</label>
-                                    <input type="email" id="email-est" name="email" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone-est">Teléfono (Opcional)</label>
-                                    <input type="tel" id="phone-est" name="phone">
-                                </div>
-                                <div class="form-submit">
-                                    <button type="submit" class="btn-primary">Pedir Información</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
 
-            </div>
-        </section>
+.main-nav a:hover {
+    color: #0D9488;
+}
 
-    </main>
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <a href="index.html" class="logo">
-                        <strong>vivienda.mxxg</strong>
-                    </a>
-                    <p class="footer-about">Conectando a mexicanos con su futuro en España.</p>
-                </div>
+/* --- Botones --- */
+.btn-primary {
+    background-color: #0D9488;
+    color: #ffffff !important;
+    padding: 12px 25px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+}
 
-                <div class="footer-col">
-                    <h4>Navegación</h4>
-                    <ul>
-                        <li><a href="estudiantes.html">Estudiantes</a></li>
-                        <li><a href="index.html#servicios">Inversores</a></li>
-                        <li><a href="index.html#servicios">Pisos/Rentas</a></li>
-                        <li><a href="index.html#servicios">Asesoría Migratoria</a></li>
-                    </ul>
-                </div>
+.btn-primary:hover {
+    background-color: #0A7D70;
+    color: #ffffff !important;
+}
 
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#">Política de Privacidad</a></li>
-                        <li><a href="#">Términos y Condiciones</a></li>
-                        <li><a href="#">Política de Cookies</a></li>
-                    </ul>
-                </div>
+/* Botón pequeño para header */
+.main-nav .btn-primary {
+    font-size: 1em;
+    font-weight: 500;
+    padding: 10px 18px;
+}
 
-                <div class="footer-col">
-                    <h4>Contacto</h4>
-                    <ul>
-                        <li><a href="mailto:hola@vivienda.mxxg">hola@vivienda.mxxg</a></li>
-                        <li><a href="https://wa.me/525525624262" target="_blank">WhatsApp</a></li>
-                    </ul>
-                </div>
-            </div>
+.btn-secondary {
+    background-color: #E6F3F2;
+    color: #0D9488;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap;
+    display: inline-block;
+}
 
-            <div class="footer-bottom">
-                <p>&copy; 2025 vivienda.mxxg - Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
+.btn-secondary:hover {
+    background-color: #0D9488;
+    color: #ffffff;
+}
 
-</body>
-</html>
+/* --- Sección Hero (Banner Principal) --- */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('hero-background.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 2.8em;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.hero .subtitle {
+    font-size: 1.25em;
+    color: #f0f0f0;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.search-form input[type="text"] {
+    flex-grow: 1;
+    padding: 14px 20px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 6px 0 0 6px;
+    border-right: none;
+    outline: none;
+}
+
+.search-form button {
+    border-radius: 0 6px 6px 0;
+    padding-left: 25px;
+    padding-right: 25px;
+    white-space: nowrap;
+}
+
+/* --- Sección Alianzas --- */
+.alliances {
+    background-color: #ffffff;
+    padding: 50px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.alliances h3 {
+    text-align: center;
+    color: #555;
+    font-weight: 600;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 30px;
+}
+
+.logos-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-item {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-item.logo-text {
+    font-size: 1.5em;
+    color: #888;
+    font-weight: bold;
+}
+
+.logo-item img {
+    max-height: 45px;
+    width: auto;
+    max-width: 150px;
+}
+
+/* --- Sección Servicios --- */
+.services {
+    padding: 70px 0;
+    background-color: #f8f9fa;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.service-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.service-card h3 {
+    color: #0D9488;
+    font-size: 1.3em;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* --- Sección Contacto --- */
+.contact-section {
+    padding: 70px 0;
+    background-color: #E6F3F2;
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.form-submit {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* --- Estilos de Páginas de Servicio (estudiantes, inversores, etc) --- */
+.service-hero {
+    background-color: #E6F3F2;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.service-hero h1 {
+    color: #0D9488;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.service-hero .subtitle {
+    font-size: 1.2em;
+    color: #333;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.service-content {
+    padding: 70px 0;
+    background-color: #ffffff;
+}
+
+.content-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+}
+
+.content-text {
+    font-size: 1.1em;
+    line-height: 1.7;
+}
+
+.content-text h3 {
+    color: #0D9488;
+    font-size: 1.5em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.content-text ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.content-text li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+.content-text li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #0D9488;
+    font-weight: bold;
+}
+
+.sidebar-box {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    position: sticky;
+    top: 20px; 
+}
+
+.sidebar-box h4 {
+    margin-top: 0;
+    font-size: 1.3em;
+    color: #0D9488;
+}
+
+.sidebar-box .form-group {
+    margin-bottom: 15px;
+}
+
+.sidebar-box .form-submit {
+    margin-top: 20px;
+}
+
+.sidebar-box .btn-primary {
+    width: 100%;
+}
+
+/* --- Footer --- */
+.main-footer {
+    background-color: #ffffff;
+    padding: 60px 0 30px 0;
+    border-top: 1px solid #e0e0e0;
+    color: #555;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h4 {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer-col .logo {
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.footer-about {
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col li {
+    margin-bottom: 10px;
+}
+
+.footer-col a {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: #0D9488;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 30px;
+    font-size: 0.9em;
+}
+
+/* --- Responsive (Móvil) --- */
+@media (max-width: 768px) {
+    
+    .main-header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+    
+    .main-nav li {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .main-nav .btn-primary {
+        display: block; 
+        width: auto; 
+        margin: 0 20%;
+    }
+    
+    .hero h1 {
+        font-size: 2.2em;
+    }
+    
+    .hero .subtitle {
+        font-size: 1.1em;
+    }
+    
+    .search-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .search-form input[type="text"] {
+        border-radius: 6px;
+        border-right: 1px solid #ccc;
+    }
+    
+    .search-form button {
+        border-radius: 6px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Contacto en móvil */
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form {
+        padding: 20px;
+    }
+    
+    /* Páginas de servicio en móvil */
+    .service-hero h1 {
+        font-size: 2em;
+    }
+    
+    .content-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .sidebar-box {
+        margin-top: 20px;
+        position: static;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-col {
+        text-align: center;
+    }
+    
+    .footer-col .logo {
+        margin: 0 auto 15px auto;
+    }
+}
