@@ -37,13 +37,66 @@ h2 { font-size: 2.2em; text-align: center; margin-bottom: 10px; }
 .main-nav .btn-primary { padding: 8px 15px; }
 
 /* --- Hero --- */
-.hero {
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('hero-background.jpg');
-    background-size: cover; background-position: center;
-    padding: 120px 0; text-align: center; color: #fff;
+/* --- HERO SPLIT (NUEVO DISEÑO DE CABECERA) --- */
+.hero-split {
+    display: flex;
+    min-height: 600px; /* Altura mínima para que se vea bien */
+    background-color: #f8f9fa; /* Fondo general si la imagen no carga */
 }
-.hero h1 { color: #fff; font-size: 3em; margin-bottom: 20px; }
-.hero .subtitle { font-size: 1.3em; margin-bottom: 30px; color: #f0f0f0; }
+
+.hero-split-left {
+    flex: 1; /* Ocupa la mitad del espacio */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+    text-align: left;
+    background-color: #ffffff; /* Fondo blanco para la parte del texto */
+}
+
+.hero-split-left .hero-content {
+    max-width: 500px;
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.hero-split-left h1 {
+    color: #0D9488; /* Color principal para el título */
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero-split-left .subtitle {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.hero-split-right {
+    flex: 1; /* Ocupa la otra mitad del espacio */
+    background-image: url('hero-split-image.jpg'); /* ¡Esta es la imagen que necesitaremos subir! */
+    background-size: cover;
+    background-position: center;
+    min-height: 100%; /* Asegura que la imagen ocupe todo el alto */
+}
+
+/* --- Responsive para el Hero Split --- */
+@media (max-width: 992px) { /* Para tablets y dispositivos más pequeños */
+    .hero-split {
+        flex-direction: column; /* Apila las columnas */
+    }
+    .hero-split-left, .hero-split-right {
+        flex: none; /* Desactiva el flex de 1 */
+        width: 100%; /* Ocupa todo el ancho */
+        min-height: 350px; /* Menos alto en móvil */
+        padding: 40px 20px;
+    }
+    .hero-split-left .hero-content {
+        text-align: center; /* Centra el texto en móvil */
+    }
+    .hero-split-left h1 {
+        font-size: 2.5em; /* Título más pequeño en móvil */
+    }
+}
 
 /* --- TIRA DE LOGOS (NUEVO) --- */
 .logos-strip {
