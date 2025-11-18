@@ -51,61 +51,89 @@ body {
     box-shadow: 0 4px 15px rgba(13, 148, 136, 0.4);
 }
 
-/* --- HERO DUAL IMAGES (ESTILO RENDER) --- */
+/* --- HERO TRÍPTICO (3 Columnas: Foto - Texto - Foto) --- */
 .hero-dual-images {
-    position: relative;
-    height: 650px;
     display: flex;
+    height: 600px; /* Altura fija */
     width: 100%;
-    overflow: hidden;
     background-color: var(--dark-bg); /* Fondo base oscuro */
 }
 
+/* Las imágenes de los lados */
 .hero-image-side {
-    flex: 1;
+    flex: 1; /* Ocupan el espacio restante automáticamente */
     background-size: cover;
     background-position: center;
     position: relative;
-    /* Filtro para unificar tonos */
-    filter: brightness(0.9) contrast(1.1);
+    /* Quitamos filtros oscuros para que se vean brillantes y claras */
+    filter: none; 
 }
 
-/* La tarjeta flotante central (OSCURA Y ELEGANTE) */
+/* El contenedor del texto (COLUMNA CENTRAL SÓLIDA) */
 .hero-center-content {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
+    flex: 0 0 450px; /* Ancho fijo para la columna central */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Ya no flota, ocupa su espacio */
     z-index: 10;
-    width: 90%; max-width: 650px;
+    background-color: var(--dark-bg); /* El mismo azul oscuro del header */
+    border-left: 1px solid rgba(255,255,255,0.1); /* Líneas sutiles separadoras */
+    border-right: 1px solid rgba(255,255,255,0.1);
 }
 
+/* Caja de texto interna */
 .hero-text-box {
-    /* Fondo Azul Oscuro Translúcido (Glassmorphism Oscuro) */
-    background-color: rgba(30, 41, 59, 0.85); 
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    
-    padding: 50px;
-    border-radius: 16px;
+    padding: 40px;
     text-align: center;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent; /* Sin fondo extra */
+    box-shadow: none; /* Sin sombra */
+    border: none;
+    backdrop-filter: none;
     color: white;
 }
 
 .hero-text-box h1 {
     color: #ffffff;
-    font-size: 2.8em;
+    font-size: 2.5em;
     margin-bottom: 20px;
-    line-height: 1.1;
+    line-height: 1.2;
     font-weight: 700;
 }
 
 .hero-text-box .subtitle {
-    font-size: 1.15em;
-    color: #cbd5e1; /* Gris azulado muy claro */
+    font-size: 1.1em;
+    color: #cbd5e1;
     margin-bottom: 35px;
-    line-height: 1.5;
+    line-height: 1.6;
+}
+
+
+/* --- Responsive para el Tríptico --- */
+@media (max-width: 992px) {
+    .hero-dual-images {
+        flex-direction: column; /* Apilar en vertical */
+        height: auto;
+    }
+    
+    /* Orden: Texto arriba, luego fotos abajo (o una sola foto) */
+    .hero-center-content {
+        order: -1; /* El texto va primero */
+        flex: none;
+        width: 100%;
+        padding: 60px 20px;
+        border: none;
+    }
+    
+    .hero-image-side {
+        width: 100%;
+        height: 250px; /* Altura de la foto en móvil */
+    }
+    
+    /* Opcional: En móvil mostramos las dos fotos o solo una */
+    .hero-image-side.right {
+        display: block; 
+    }
 }
 
 /* Botón Principal Grande */
