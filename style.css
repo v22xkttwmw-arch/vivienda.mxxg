@@ -51,88 +51,99 @@ body {
     box-shadow: 0 4px 15px rgba(13, 148, 136, 0.4);
 }
 
-/* --- HERO TRÍPTICO (3 Columnas: Foto - Texto - Foto) --- */
+/* --- HERO "SPLIT BACKGROUND" (Texto Flotante Sin Caja) --- */
 .hero-dual-images {
-    display: flex;
-    height: 600px; /* Altura fija */
+    position: relative; /* Necesario para posicionar el texto encima */
+    height: 650px;      /* Altura fija impactante */
+    display: flex;      /* Para poner las imágenes lado a lado */
     width: 100%;
-    background-color: var(--dark-bg); /* Fondo base oscuro */
+    overflow: hidden;
+    background-color: var(--dark-bg); /* Fondo de respaldo */
 }
 
-/* Las imágenes de los lados */
+/* Las imágenes de fondo (50% cada una, tocándose en el medio) */
 .hero-image-side {
-    flex: 1; /* Ocupan el espacio restante automáticamente */
+    width: 50%;
+    height: 100%;
     background-size: cover;
     background-position: center;
     position: relative;
-    /* Quitamos filtros oscuros para que se vean brillantes y claras */
-    filter: none; 
 }
 
-/* El contenedor del texto (COLUMNA CENTRAL SÓLIDA) */
+/* Añadimos una capa oscura sutil DIRECTAMENTE sobre las fotos */
+/* Esto es vital para que el texto blanco se lea sin necesidad de caja */
+.hero-image-side::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* 40% de oscuridad */
+    z-index: 1;
+}
+
+/* El contenedor del texto (FLOTANDO EN EL CENTRO) */
 .hero-center-content {
-    flex: 0 0 450px; /* Ancho fijo para la columna central */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative; /* Ya no flota, ocupa su espacio */
-    z-index: 10;
-    background-color: var(--dark-bg); /* El mismo azul oscuro del header */
-    border-left: 1px solid rgba(255,255,255,0.1); /* Líneas sutiles separadoras */
-    border-right: 1px solid rgba(255,255,255,0.1);
+    position: absolute; /* Se sale del flujo normal */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrado matemático exacto */
+    z-index: 10; /* Por encima de las fotos y sus capas oscuras */
+    width: 90%;
+    max-width: 800px; /* Ancho máximo del texto */
+    text-align: center; /* Texto centrado */
 }
 
-/* Caja de texto interna */
+/* Estilos del texto (Sin caja de fondo) */
 .hero-text-box {
-    padding: 40px;
-    text-align: center;
-    background: transparent; /* Sin fondo extra */
-    box-shadow: none; /* Sin sombra */
+    background: transparent; /* SIN FONDO */
+    padding: 0;
     border: none;
-    backdrop-filter: none;
-    color: white;
+    box-shadow: none;
 }
 
 .hero-text-box h1 {
-    color: #ffffff;
-    font-size: 2.5em;
+    color: #ffffff; /* Texto Blanco Puro */
+    font-size: 3.5em; /* Grande e impactante */
     margin-bottom: 20px;
-    line-height: 1.2;
-    font-weight: 700;
+    line-height: 1.1;
+    font-weight: 800;
+    /* Sombra de texto fuerte para que se lea sobre cualquier foto */
+    text-shadow: 0 4px 20px rgba(0,0,0,0.5); 
 }
 
 .hero-text-box .subtitle {
-    font-size: 1.1em;
-    color: #cbd5e1;
-    margin-bottom: 35px;
+    font-size: 1.4em;
+    color: #f0f0f0; /* Blanco hueso */
+    margin-bottom: 40px;
     line-height: 1.6;
+    font-weight: 500;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+/* Botón más grande para que destaque */
+.hero-text-box .btn-primary {
+    padding: 15px 40px;
+    font-size: 1.2em;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
 
 
-/* --- Responsive para el Tríptico --- */
+/* --- Responsive --- */
 @media (max-width: 992px) {
     .hero-dual-images {
-        flex-direction: column; /* Apilar en vertical */
-        height: auto;
-    }
-    
-    /* Orden: Texto arriba, luego fotos abajo (o una sola foto) */
-    .hero-center-content {
-        order: -1; /* El texto va primero */
-        flex: none;
-        width: 100%;
-        padding: 60px 20px;
-        border: none;
+        flex-direction: column; /* Una imagen arriba y otra abajo */
     }
     
     .hero-image-side {
         width: 100%;
-        height: 250px; /* Altura de la foto en móvil */
+        height: 50%; /* Se reparten la altura */
     }
     
-    /* Opcional: En móvil mostramos las dos fotos o solo una */
-    .hero-image-side.right {
-        display: block; 
+    .hero-center-content {
+        width: 95%;
+    }
+    
+    .hero-text-box h1 {
+        font-size: 2.2em;
     }
 }
 
