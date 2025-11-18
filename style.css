@@ -36,50 +36,54 @@ h2 { font-size: 2.2em; text-align: center; margin-bottom: 10px; }
 .main-nav a:hover { color: #0D9488; }
 .main-nav .btn-primary { padding: 8px 15px; }
 
-/* --- HERO DUAL IMAGES (Texto Centro + 2 Fotos) --- */
+/* --- HERO DUAL IMAGES (Diseño Premium: Split + Tarjeta Flotante) --- */
 .hero-dual-images {
+    position: relative; /* Para poder posicionar cosas encima */
+    height: 650px;      /* Altura fija para impacto visual */
     display: flex;
-    height: 600px; /* Altura fija para que se vea impactante */
-    position: relative;
+    width: 100%;
     overflow: hidden;
-    background-color: #fff;
 }
 
-/* Las imágenes de los lados */
+/* Las imágenes de fondo (50% y 50%) */
 .hero-image-side {
-    flex: 1; /* Ocupan el espacio disponible */
+    width: 50%;
+    height: 100%;
     background-size: cover;
     background-position: center;
     position: relative;
 }
 
-/* Efecto de degradado para que no corten bruscamente con el blanco */
-.hero-image-side.left {
-    /* Degradado de transparente a blanco hacia la derecha */
-    mask-image: linear-gradient(to right, black 60%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, black 60%, transparent 100%);
+/* Quitamos los degradados blancos anteriores para que la imagen sea nítida */
+.hero-image-side.left { mask-image: none; -webkit-mask-image: none; }
+.hero-image-side.right { mask-image: none; -webkit-mask-image: none; }
+
+/* Oscurecemos un poco las fotos para que no compitan con el texto */
+.hero-image-side::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Sutil capa oscura */
 }
 
-.hero-image-side.right {
-    /* Degradado de transparente a blanco hacia la izquierda */
-    mask-image: linear-gradient(to left, black 60%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to left, black 60%, transparent 100%);
-}
-
-/* El contenedor del texto en el medio */
+/* El contenedor del texto (TARJETA FLOTANTE) */
 .hero-center-content {
-    flex: 0 0 500px; /* Ancho fijo para el texto en el centro */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10; /* Por encima de las imágenes */
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente por si acaso */
-    /* Si quieres que se vea 100% blanco el centro, quita la transparencia */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrado perfecto absoluto */
+    z-index: 10;
+    width: 90%;
+    max-width: 600px; /* Ancho máximo de la tarjeta */
 }
 
 .hero-text-box {
+    background-color: rgba(255, 255, 255, 0.95); /* Blanco casi sólido */
+    padding: 50px 40px;
+    border-radius: 16px; /* Bordes redondeados modernos */
     text-align: center;
-    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2); /* Sombra elegante para que "flote" */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque estilo Apple (Glassmorphism) */
 }
 
 .hero-text-box h1 {
@@ -92,37 +96,39 @@ h2 { font-size: 2.2em; text-align: center; margin-bottom: 10px; }
 .hero-text-box .subtitle {
     font-size: 1.2em;
     color: #555;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
+    line-height: 1.5;
 }
 
-/* --- Responsive para Hero Dual --- */
+/* Ajustes Responsive */
 @media (max-width: 992px) {
     .hero-dual-images {
-        flex-direction: column;
+        flex-direction: column; /* Una imagen arriba y otra abajo en tablet */
         height: auto;
-    }
-    
-    .hero-center-content {
-        order: -1; /* El texto va primero en móviles */
-        flex: none;
-        width: 100%;
-        padding: 60px 20px;
+        min-height: 600px;
     }
     
     .hero-image-side {
-        height: 250px; /* Altura de las fotos en móvil */
         width: 100%;
-        mask-image: none; /* Quitamos el degradado en móvil */
-        -webkit-mask-image: none;
+        height: 300px; /* Altura en móvil */
     }
     
-    /* Ocultamos una foto en móvil para no hacerlo muy largo, o dejamos las dos */
     .hero-image-side.right {
-        display: none; /* Opcional: Ocultar la segunda foto en celular */
+        display: block; /* Mostramos ambas en móvil para que se vea bonito */
+    }
+    
+    .hero-center-content {
+        width: 90%;
+    }
+    
+    .hero-text-box {
+        padding: 30px 20px;
+    }
+    
+    .hero-text-box h1 {
+        font-size: 2.2em;
     }
 }
-
-
 /* --- TIRA DE LOGOS --- */
 .logos-strip {
     background-color: #ffffff;
