@@ -175,9 +175,12 @@ body {
 
 .mini-service-item {
     background: #ffffff; border: 1px solid #f0f0f0; border-radius: 16px; width: 100%;
-    aspect-ratio: 1 / 1; display: flex; flex-direction: column; align-items: center;
-    justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    transition: transform 0.3s ease; padding: 15px; box-sizing: border-box;
+    /* Quitamos aspect-ratio para que crezca con el texto */
+    min-height: 300px; 
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; /* Centrado vertical */
+    text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; padding: 20px; box-sizing: border-box;
 }
 .mini-service-item:hover { transform: translateY(-10px); border-color: var(--primary-color); }
 
@@ -190,7 +193,16 @@ body {
 .mini-service-item h4 { color: #333; font-size: 1.1em; font-weight: 700; text-align: center; margin: 0; }
 
 /* Ocultar descripciones extra en home */
-.card-desc, .card-link { display: none; }
+.service-desc {
+    font-size: 0.95em;
+    color: #666;
+    text-align: center;
+    margin-top: 10px;
+    line-height: 1.4;
+    padding: 0 10px; /* Un poco de margen lateral */
+}
+
+.card-link { display: none; } /* El enlace "Ver más" lo mantenemos oculto si quieres, o lo borras también */
 
 
 /* --- ESTILOS GENÉRICOS (Footer, FAQ, etc.) --- */
