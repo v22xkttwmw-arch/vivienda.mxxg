@@ -36,54 +36,90 @@ h2 { font-size: 2.2em; text-align: center; margin-bottom: 10px; }
 .main-nav a:hover { color: #0D9488; }
 .main-nav .btn-primary { padding: 8px 15px; }
 
-/* --- HERO SPLIT (DISEÑO DIVIDIDO) --- */
-/* Restauramos el diseño de dos columnas */
-.hero {
+/* --- HERO DUAL IMAGES (Texto Centro + 2 Fotos) --- */
+.hero-dual-images {
     display: flex;
-    min-height: 600px; 
-    background-color: #f8f9fa; 
-    padding: 0; /* Quitamos padding general para que ocupe todo */
+    height: 600px; /* Altura fija para que se vea impactante */
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
 }
 
-/* Parte izquierda: Texto */
-.hero-split-left {
-    flex: 1; 
+/* Las imágenes de los lados */
+.hero-image-side {
+    flex: 1; /* Ocupan el espacio disponible */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Efecto de degradado para que no corten bruscamente con el blanco */
+.hero-image-side.left {
+    /* Degradado de transparente a blanco hacia la derecha */
+    mask-image: linear-gradient(to right, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 60%, transparent 100%);
+}
+
+.hero-image-side.right {
+    /* Degradado de transparente a blanco hacia la izquierda */
+    mask-image: linear-gradient(to left, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to left, black 60%, transparent 100%);
+}
+
+/* El contenedor del texto en el medio */
+.hero-center-content {
+    flex: 0 0 500px; /* Ancho fijo para el texto en el centro */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px 40px;
-    text-align: left;
-    background-color: #ffffff;
-    background-image: linear-gradient(to right, #ffffff 50%, #F0F4F4 100%); 
+    z-index: 10; /* Por encima de las imágenes */
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente por si acaso */
+    /* Si quieres que se vea 100% blanco el centro, quita la transparencia */
 }
 
-.hero-content {
-    max-width: 500px;
-    text-align: left; 
+.hero-text-box {
+    text-align: center;
+    padding: 40px;
 }
 
-.hero h1 {
+.hero-text-box h1 {
     color: #0D9488;
-    font-size: 3em;
+    font-size: 2.8em;
     margin-bottom: 20px;
-    text-shadow: none; /* Quitamos sombra porque el fondo es claro */
+    line-height: 1.2;
 }
 
-.hero .subtitle {
-    font-size: 1.3em;
-    margin-bottom: 30px;
+.hero-text-box .subtitle {
+    font-size: 1.2em;
     color: #555;
-    text-shadow: none;
+    margin-bottom: 30px;
 }
 
-/* Parte derecha: IMAGEN DEL ARCO */
-.hero-split-right {
-    flex: 1; 
-    /* ENLACE DIRECTO A LA FOTO DEL ARCO DEL TRIUNFO */
-    background-image: url('https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=1600&q=80'); 
-    background-size: cover;
-    background-position: center;
-    min-height: 100%; 
+/* --- Responsive para Hero Dual --- */
+@media (max-width: 992px) {
+    .hero-dual-images {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .hero-center-content {
+        order: -1; /* El texto va primero en móviles */
+        flex: none;
+        width: 100%;
+        padding: 60px 20px;
+    }
+    
+    .hero-image-side {
+        height: 250px; /* Altura de las fotos en móvil */
+        width: 100%;
+        mask-image: none; /* Quitamos el degradado en móvil */
+        -webkit-mask-image: none;
+    }
+    
+    /* Ocultamos una foto en móvil para no hacerlo muy largo, o dejamos las dos */
+    .hero-image-side.right {
+        display: none; /* Opcional: Ocultar la segunda foto en celular */
+    }
 }
 
 
