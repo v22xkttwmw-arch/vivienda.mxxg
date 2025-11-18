@@ -26,7 +26,7 @@ h2 { font-size: 2.2em; text-align: center; margin-bottom: 10px; }
 }
 .btn-secondary:hover { background-color: #0D9488; color: #ffffff; }
 
-/* --- Header --- */
+/* --- Header (Pegajoso) --- */
 .main-header { background: #fff; padding: 15px 0; border-bottom: 1px solid #e0e0e0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
 .container { width: 90%; max-width: 1200px; margin: 0 auto; }
 .main-header .container { display: flex; justify-content: space-between; align-items: center; }
@@ -36,41 +36,55 @@ h2 { font-size: 2.2em; text-align: center; margin-bottom: 10px; }
 .main-nav a:hover { color: #0D9488; }
 .main-nav .btn-primary { padding: 8px 15px; }
 
-/* --- HERO --- */
-/* Este diseño mantiene el Hero centrado con la imagen de la ciudad */
+/* --- HERO SPLIT (DISEÑO DIVIDIDO) --- */
+/* Restauramos el diseño de dos columnas */
 .hero {
-    background-image: url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1600&q=80'); /* Foto de estilo de vida / ciudad */
-    background-size: cover; 
+    display: flex;
+    min-height: 600px; 
+    background-color: #f8f9fa; 
+    padding: 0; /* Quitamos padding general para que ocupe todo */
+}
+
+/* Parte izquierda: Texto */
+.hero-split-left {
+    flex: 1; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+    text-align: left;
+    background-color: #ffffff;
+    background-image: linear-gradient(to right, #ffffff 50%, #F0F4F4 100%); 
+}
+
+.hero-content {
+    max-width: 500px;
+    text-align: left; 
+}
+
+.hero h1 {
+    color: #0D9488;
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: none; /* Quitamos sombra porque el fondo es claro */
+}
+
+.hero .subtitle {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    color: #555;
+    text-shadow: none;
+}
+
+/* Parte derecha: IMAGEN DEL ARCO */
+.hero-split-right {
+    flex: 1; 
+    /* ENLACE DIRECTO A LA FOTO DEL ARCO DEL TRIUNFO */
+    background-image: url('https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=1600&q=80'); 
+    background-size: cover;
     background-position: center;
-    padding: 140px 0; /* Un poco más alto para lucir mejor */
-    text-align: center; 
-    color: #fff;
-    position: relative;
+    min-height: 100%; 
 }
-/* Capa oscura para legibilidad */
-.hero::before {
-    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.5); z-index: 0;
-}
-.hero .container { position: relative; z-index: 1; }
-
-.hero h1 { 
-    color: #fff; font-size: 3em; margin-bottom: 20px; 
-    text-shadow: 0 2px 10px rgba(0,0,0,0.3); 
-}
-.hero .subtitle { 
-    font-size: 1.3em; margin-bottom: 30px; color: #f0f0f0; 
-    text-shadow: 0 1px 5px rgba(0,0,0,0.3); 
-}
-/* Capa oscura para legibilidad */
-.hero::before {
-    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.4); z-index: 0;
-}
-.hero .container { position: relative; z-index: 1; }
-
-.hero h1 { color: #fff; font-size: 3em; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-.hero .subtitle { font-size: 1.3em; margin-bottom: 30px; color: #f0f0f0; text-shadow: 0 1px 5px rgba(0,0,0,0.3); }
 
 
 /* --- TIRA DE LOGOS --- */
@@ -91,28 +105,23 @@ h2 { font-size: 2.2em; text-align: center; margin-bottom: 10px; }
 .text-logo:hover { color: #0D9488; }
 
 
-/* --- SERVICIOS INTEGRALES (GRID CUADRADO LIMPIO) --- */
+/* --- SERVICIOS INTEGRALES (GRID CUADRADO) --- */
 .services-main { padding: 80px 0; background-color: #f8f9fa; }
 .mini-services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
 
 .mini-service-item {
     background: #ffffff; border: 1px solid #f0f0f0; border-radius: 16px; width: 100%;
-    aspect-ratio: 1 / 1; /* OBLIGA a ser CUADRADO */
-    display: flex; flex-direction: column; align-items: center;
+    aspect-ratio: 1 / 1; display: flex; flex-direction: column; align-items: center;
     justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.03);
     transition: transform 0.3s ease, box-shadow 0.3s ease; padding: 15px; box-sizing: border-box;
 }
 .mini-service-item:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-color: #0D9488; }
 
-.icon-container {
-    width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;
-    margin-bottom: 20px; background-color: #ffffff; border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
+.icon-container { width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; background-color: #ffffff; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
 .icon-container img { width: 45px; height: 45px; object-fit: contain; }
 .mini-service-item h4 { color: #333; font-size: 1.1em; font-weight: 700; text-align: center; margin: 0; line-height: 1.4; }
 
-/* Ocultamos descripciones en Home para mantener el diseño limpio cuadrado */
+/* Ocultar descripciones en home */
 .card-desc, .card-link { display: none; }
 
 
@@ -131,9 +140,6 @@ h2 { font-size: 2.2em; text-align: center; margin-bottom: 10px; }
 .faq-grid { max-width: 800px; margin: 0 auto; }
 .faq-item { background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; margin-bottom: 15px; overflow: hidden; }
 .faq-question { width: 100%; text-align: left; padding: 20px; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 1.05em; color: #333; transition: background 0.3s; }
-.faq-question:hover { background-color: #f9f9f9; }
-.faq-question i { color: #0D9488; transition: transform 0.3s; }
-.faq-question.active i { transform: rotate(180deg); }
 .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 20px; }
 .faq-answer p { margin: 20px 0; color: #666; line-height: 1.6; }
 
@@ -148,13 +154,14 @@ input, select, textarea { padding: 12px; border: 1px solid #ccc; border-radius: 
 .form-submit { text-align: center; margin-top: 20px; }
 
 
-/* --- ESTILOS PÁGINAS INTERNAS (HEROS) --- */
-.service-hero { background-size: cover; background-position: center; padding: 120px 0; position: relative; color: white; text-align: center; }
+/* --- ESTILOS PÁGINAS INTERNAS --- */
+.service-hero { background-size: cover; background-position: center; padding: 120px 0; position: relative; color: white; text-align: center; display: block; }
 .service-hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 0; }
 .service-hero .container { position: relative; z-index: 1; }
-.service-hero h1 { color: white; font-size: 2.5em; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-.service-hero .subtitle { color: #f0f0f0; font-weight: 500; }
+.service-hero h1 { color: white; font-size: 2.5em; text-shadow: 0 2px 10px rgba(0,0,0,0.3); text-align: center; margin-bottom: 15px; }
+.service-hero .subtitle { color: #f0f0f0; font-weight: 500; text-shadow: 0 1px 5px rgba(0,0,0,0.3); }
 
+/* Imágenes Hero Internas */
 .hero-estudiantes { background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80'); }
 .hero-inversores { background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80'); }
 .hero-pisos { background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80'); }
@@ -165,7 +172,7 @@ input, select, textarea { padding: 12px; border: 1px solid #ccc; border-radius: 
 .content-text { font-size: 1.1em; line-height: 1.7; }
 .sidebar-box { background: #f8f9fa; padding: 30px; border-radius: 8px; position: sticky; top: 100px; }
 
-/* Galería Interna */
+/* Galería */
 .gallery-section { padding: 0 0 80px 0; background: #fff; }
 .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
 .gallery-item { position: relative; border-radius: 12px; overflow: hidden; height: 300px; }
@@ -193,8 +200,14 @@ input, select, textarea { padding: 12px; border: 1px solid #ccc; border-radius: 
 
 /* --- Responsive --- */
 @media (max-width: 992px) {
+    /* TABLET/MÓVIL: Hero split pasa a columna */
+    .hero { flex-direction: column; display: flex; } /* Asegura que el Hero Split se comporte bien */
+    .hero-split-left, .hero-split-right { flex: none; width: 100%; min-height: 350px; padding: 40px 20px; }
+    .hero-content { text-align: center; margin: 0 auto; }
+    .hero-split-right { order: -1; } /* Imagen arriba */
+    
+    /* Otros Grids */
     .why-us-grid, .footer-grid, .content-layout { grid-template-columns: 1fr; gap: 40px; }
-    .why-image { order: -1; }
     .mini-services-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
 }
 
@@ -202,5 +215,5 @@ input, select, textarea { padding: 12px; border: 1px solid #ccc; border-radius: 
     .main-header .container, .main-nav ul { flex-direction: column; gap: 15px; }
     .main-nav .btn-primary { width: 100%; text-align: center; box-sizing: border-box; }
     .mini-services-grid, .gallery-grid { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 2em; }
+    .hero-split-left h1 { font-size: 2.5em; }
 }
