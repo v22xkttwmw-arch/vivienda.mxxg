@@ -96,7 +96,93 @@
             </div>
         </div>
     </section>
-    
+    <section class="why-us">
+        <div class="container">
+            <div class="why-us-grid">
+                <div class="why-text">
+                    <h2>Más que una agencia, tu socio en España</h2>
+                    <p class="section-subtitle" style="text-align: left;">Entendemos que mudarse de país genera incertidumbre. Nosotros eliminamos el riesgo.</p>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div>
+                            <h4>Partners Verificados</h4>
+                            <p>Olvídate de estafas o "pisos fantasma". Solo trabajamos con empresas de prestigio como Ukio y Livensa Living.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-handshake-simple"></i></div>
+                        <div>
+                            <h4>Acompañamiento 360º</h4>
+                            <p>No solo te damos las llaves. Coordinamos tu visado, tu cuenta bancaria y tu llegada con nuestros aliados.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-comments-dollar"></i></div>
+                        <div>
+                            <h4>Sin Letras Chiquitas</h4>
+                            <p>Negociamos condiciones especiales para mexicanos: contratos flexibles y facilidades sin aval bancario excesivo.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="why-image">
+                    <img src="https://images.unsplash.com/photo-1512470876302-972faa2aa9a2?auto=format&fit=crop&w=800&q=80" alt="Disfrutando España">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2>Preguntas Frecuentes</h2>
+            <p class="section-subtitle">Resolvemos tus dudas antes de que hagas las maletas.</p>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        ¿Necesito tener nómina o aval en España para rentar?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Generalmente sí, pero <strong>con nosotros no siempre es necesario</strong>. Nuestros partners de <em>Flex Living</em> están acostumbrados a trabajar con extranjeros y aceptan demostración de solvencia desde México o pagos por adelantado, facilitando tu entrada sin avalista español.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        ¿Ayudan con el trámite de la Visa de Estudiante?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí. A través de nuestro equipo legal aliado, gestionamos tu expediente completo para presentarlo en el Consulado de España en México. Revisamos que tu matrícula, seguro médico y medios económicos cumplan con todos los requisitos actuales.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        ¿Cómo funciona la inversión para la Golden Visa?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Debes invertir al menos 500.000€ en bienes inmuebles (libres de cargas) en España. Nosotros te ayudamos a seleccionar propiedades de alta rentabilidad que cumplan este requisito y nuestros abogados gestionan el permiso de residencia para ti y tu familia.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        ¿Tienen oficinas físicas en España?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Operamos digitalmente para darte rapidez, pero nuestros partners (residencias y promotoras) tienen presencia física en Madrid, Barcelona, Valencia y Málaga. Siempre tendrás una cara visible y un lugar a donde acudir cuando llegues.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="contact-section" id="contacto">
         <div class="container">
             <h2>¿Listo para empezar?</h2>
@@ -197,5 +283,20 @@
         });
     </script>
 
+<script>
+        const faqs = document.querySelectorAll(".faq-question");
+
+        faqs.forEach(faq => {
+            faq.addEventListener("click", () => {
+                faq.classList.toggle("active");
+                const panel = faq.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
 </body>
 </html>
